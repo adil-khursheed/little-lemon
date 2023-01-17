@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Markazi+Text:wght@400;500;600;700&display=swap');
+
+header{
+   position: sticky;
+   top: 0;
+   left: 0;
+   background-color: #fff;
+   padding: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header{
+    max-width: 887px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header img{
+    width: 200px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar{
+    display: flex;
+    gap: 28px;
+    list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+.menu-link{
+    text-decoration: none;
+    color: #333;
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+/* HEADER STYLING ENDS */
+
+/* MAIN SECTION STYLING STARTS */
+.hero{
+    background-color: #495E57;
+    padding: 1rem;
+}
+.hero-section{
+    max-width: 887px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-text{
+    max-width: 422px;
 }
+
+.hero-text h1{
+    font-family: 'Markazi Text', serif;
+    color: #f4ce14;
+    font-size: 64px;
+    line-height: 0.6;
+}
+
+.hero-text h4{
+    font-family: 'Markazi Text', serif;
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.hero-text p{
+    color: #fff;
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+
+.hero-text button{
+    display: block;
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    width: 200px;
+    height: 60px;
+    color: #333;
+    background-color: #f4ce14;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.hero-image img{
+    width: 375px;
+    height: 375px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
