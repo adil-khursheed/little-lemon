@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import '../components/Footer.css';
 import footerLogo from "../footer-logo.png";
 import { Link } from 'react-router-dom';
 

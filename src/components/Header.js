@@ -1,4 +1,5 @@
 import React from 'react'
+import '../components/Header.css';
 import logo from '../logo.png'
 import { Link } from 'react-router-dom'
 import { FaBars, FaTimes } from "react-icons/fa";

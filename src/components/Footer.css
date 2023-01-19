@@ -1,0 +1,29 @@
+/* FOOTER STYLING STARTS */
+.footer-section{
+    max-width: 887px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.footer__logo img{
+    width: 100px;
+}
+
+footer h4{
+    font-size: 21px;
+    margin-bottom: 0.6rem;
+}
+
+.footer__menu,
+.social__links,
+address{
+    font-family: var(--secondary-font);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 15px;
+    font-style: normal;
+}
