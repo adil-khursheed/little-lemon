@@ -1,0 +1,52 @@
+form,
+.booking__title{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.booking__title h1{
+    color: var(--primary-color-2);
+    text-align: center;
+}
+
+label{
+    font-family: var(--primary-font);
+    font-size: 1.4rem;
+    color: var(--primary-color-2);
+}
+
+input,
+select{
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--secondary-color-3);
+    outline: none;
+    color: var(--primary-color-2);
+    font-family: var(--secondary-font);
+}
+
+.choose__date,
+.choose__time,
+.number__guests,
+.occasion{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+#occasion,
+#res-time{
+    background-color: var(--primary-color-2);
+    color: #fff;
+    border: none;
+}
+
+.submit__btn{
+    background-color: var(--primary-color-1);
+    width: 100%;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}

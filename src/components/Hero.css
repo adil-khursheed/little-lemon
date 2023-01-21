@@ -1,0 +1,82 @@
+/* HERO SECTION STYLING STARTS */
+.hero{
+    background-color: var(--primary-color-2);
+    margin-bottom: 2rem;
+}
+.hero-section{
+    max-width: 887px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.hero-text{
+    max-width: 422px;
+}
+
+.hero-text h1{
+    color: var(--primary-color-1);
+    font-size: clamp(2.8rem, 8vw, 4rem);
+    line-height: 0.6;
+}
+
+.hero-text h4{
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.hero-text p{
+    color: #fff;
+    font-size: clamp(0.9rem, 4vw, 1.25rem);
+    margin-bottom: 2rem;
+}
+
+button{
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    width: 200px;
+    height: 60px;
+    color: var(--secondary-color-4);
+    background-color: var(--primary-color-1);
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.hero-image img{
+    width: 375px;
+    height: fit-content;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+
+@media screen and (max-width: 740px) {
+    .hero-section{
+        flex-direction: column-reverse;
+    }
+
+    .hero-text,
+    .hero-image img{
+        max-width: 740px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    button{
+        font-size: 14px;
+        width: 150px;
+        height: 50px;
+    }
+}
+/* HERO SECTION STYLING ENDS */

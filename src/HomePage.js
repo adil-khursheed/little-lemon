@@ -1,88 +1,16 @@
 import React from 'react';
-import './HomePage.css';
-import restaurant from './assets/restaurantfood.jpg';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { useNavigate } from 'react-router-dom';
-import GreekSalad from './assets/greek-salad.jpg';
-import LemonDessert from './assets/lemon-dessert.jpg';
-import Bruchetta from './assets/bruchetta.svg';
-import { FaBiking } from "react-icons/fa";
-
-const specialMenus = [
-  {
-    image: GreekSalad,
-    title: 'Greek Salad',
-    price: '$12.99',
-    desc: 'The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.'
-  },
-  {
-    image: Bruchetta,
-    title: 'Bruchetta',
-    price: '$5.99',
-    desc: 'Our Bruchetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.'
-  },
-  {
-    image: LemonDessert,
-    title: 'Lemon Dessert',
-    price: '$5.00',
-    desc: 'This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.'
-  }
-]
+import Hero from './components/Hero';
+import Specials from './components/Specials';
 
 const HomePage = () => {
-  const navigate = useNavigate();
-  
   return (
     <>
       <Header />
       <main>
-        {/* HERO SECTION STARTS */}
-        <section className='hero'>
-          <div className='hero-section'>
-            <div className='hero-text'>
-              <h1>Little Lemon</h1>
-              <h4>Chicago</h4>
-              <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-              <button onClick={() => navigate('/reservations')}>Reserve a Table</button>
-            </div>
-            <div className='hero-image'>
-              <img src={restaurant} alt='Restaurant Food' />
-            </div>
-          </div>
-        </section>
-        {/* HERO SECTION ENDS */}
-
-        {/* SPECIALS SECTION STARTS */}
-        <section className='specials'>
-          <div className='specials__title'>
-            <h2>This weeks specials!</h2>
-            <button onClick={() => navigate('/menu')}>Online Menu</button>
-          </div>
-          <div className='specials__menu'>
-            {specialMenus.map((specialMenu) => {
-              return (
-                <div className='specials__dish'>
-                  <div className='dish__image'>
-                    <img src={specialMenu.image} />
-                  </div>
-                  <div className='dish__title'>
-                    <h4>{specialMenu.title}</h4>
-                    <p>{specialMenu.price}</p>
-                  </div>
-                  <div className='dish__description'>
-                    <p>{specialMenu.desc}</p>
-                  </div>
-                  <div className='delivery__btn'>
-                    <a href='#'>Order a Delivery</a>
-                    <FaBiking />
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </section>
-        {/* SPECIALS SECTION ENDS */}
+        <Hero />
+        <Specials />
       </main>
       <Footer />
     </>
