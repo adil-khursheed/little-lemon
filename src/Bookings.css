@@ -1,3 +1,7 @@
+.booking__page{
+    border-bottom: 1px solid var(--secondary-color-3);
+}
+
 .restaurant__image{
     max-width: 887px;
     height: 300px;

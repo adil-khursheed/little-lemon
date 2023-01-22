@@ -2,7 +2,14 @@ form,
 .booking__title{
     max-width: 400px;
     margin: 0 auto;
-    padding: 1rem;
+}
+
+.booking__title{
+    margin-bottom: 1rem;
+}
+
+form{
+    margin-bottom: 4rem;
 }
 
 .booking__title h1{
@@ -37,9 +44,8 @@ select{
 
 #occasion,
 #res-time{
-    background-color: var(--primary-color-2);
-    color: #fff;
     border: none;
+    cursor: pointer;
 }
 
 .submit__btn{
@@ -47,6 +53,19 @@ select{
     width: 100%;
     font-weight: 700;
     font-size: 1rem;
+    padding: 0.8rem;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    transition: 0.3s all;
+}
+
+.submit__btn:hover{
+    background-color: var(--primary-color-2);
+    color: var(--primary-color-1);
+}
+
+.field__error{
+    font-size: 0.8rem;
+    color: red;
+    margin-top: 0.2rem;
 }

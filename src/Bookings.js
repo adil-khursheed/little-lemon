@@ -9,7 +9,7 @@ const Bookings = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className='booking__page'>
         <div className='restaurant__image'>
           <img src={restaurant} alt='Restaurant' />
         </div>
