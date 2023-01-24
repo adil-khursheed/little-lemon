@@ -15,17 +15,19 @@ form{
 .booking__title h1{
     color: var(--primary-color-2);
     text-align: center;
+    font-size: 2rem;
 }
 
 label{
     font-family: var(--primary-font);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: var(--primary-color-2);
 }
 
 input,
 select{
-    padding: 0.5rem;
+    width: 100%;
+    padding: 0.8rem;
     border-radius: 6px;
     border: 1px solid var(--secondary-color-3);
     outline: none;
@@ -39,7 +41,7 @@ select{
 .occasion{
     display: flex;
     flex-direction: column;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 
 #occasion,
@@ -50,10 +52,8 @@ select{
 
 .submit__btn{
     background-color: var(--primary-color-1);
-    width: 100%;
     font-weight: 700;
     font-size: 1rem;
-    padding: 0.8rem;
     cursor: pointer;
     margin-top: 1.5rem;
     transition: 0.3s all;
