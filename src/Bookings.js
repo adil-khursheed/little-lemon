@@ -4,22 +4,8 @@ import Header from './components/Header'
 import restaurant from './assets/restaurant.jpg';
 import './Bookings.css';
 import BookingForm from './components/BookingForm';
-import { fetchAPI, submitAPI } from './api';
 
-const Bookings = () => {
-
-  function updateTimes(date) {
-    return (
-        fetchAPI(date)
-    );
-}
-function submitForm(formData) {
-    submitAPI(formData)
-}
-
-const output = fetchAPI(new Date());
-
-const [availableTimes, dispatch] = useReducer(updateTimes, output);
+const Bookings = ({ availableTimes, setAvailableTimes, submitForm }) => {
 
   return (
     <>
@@ -28,7 +14,11 @@ const [availableTimes, dispatch] = useReducer(updateTimes, output);
         <div className='restaurant__image'>
           <img src={restaurant} alt='Restaurant' />
         </div>
-        <BookingForm availableTimes={availableTimes} updateTimes={dispatch} submitForm={submitForm} />
+        <BookingForm
+          availableTimes={availableTimes}
+          setAvailableTimes={setAvailableTimes}
+          submitForm={submitForm}
+        />
       </main>
       <Footer />
     </>
