@@ -1,6 +1,7 @@
 import React from 'react'
 import './BookingForm.css'
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const GuestErrorMessage = () => {
     return (
@@ -8,31 +9,36 @@ const GuestErrorMessage = () => {
     )
 }
 
-const BookingForm = () => {
-    const [date, setDate] = useState("")
-    const [availableTimes, setAvailableTimes] = useState("")
+const BookingForm = (props) => {
+    const [date, setDate] = useState("dd / mm / yyyy")
+    const [time, setTime] = useState(
+        props.availableTimes.map((times) => <option>{times}</option>)
+    );
     const [guest, setGuest] = useState("")
     const [occasion, setOccasion] = useState("")
 
-    const getIsFormValid = () => {
-        return (
-            date &&
-            availableTimes !== "Choose Your Time" &&
-            guest.value <= 10 &&
-            occasion !== "Select Your Occasion"
-        )
-    }
+    function handleDate(e) {
+        setDate(e.target.value);
 
-    const clearForm = () => {
-        setDate("");
-        setAvailableTimes("Choose Your Time");
-        setGuest("");
-        setOccasion("Select Your Occasion")
+        let stringify = e.target.value;
+        const date = new Date(stringify);
+
+        props.updateTimes(date);
+
+        setTime(props.availableTimes.map((times) => <option>{times}</option>));
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        clearForm();
+    }
+
+    const navigate = useNavigate();
+    const formSubmission = () => {
+        if (props.submitForm) {
+            navigate('/confirmation')
+        } else {
+            return false;
+        }
     }
 
   return (
@@ -47,24 +53,13 @@ const BookingForm = () => {
                       type="date"
                       id="res-date"
                       value={date}
-                      onChange={(e) => {
-                          setDate(e.target.value);
-                      }}
+                      onChange={handleDate}
                   />
             </div>
             <div className='choose__time'>
                 <label htmlFor="res-time">Choose time</label>
-                  <select id="res-time" value={availableTimes} onChange={(e) => {
-                      setAvailableTimes(e.target.value)
-                    }}
-                  >
-                    <option value="">Choose Your Time</option>
-                    <option value='17:00'>17:00</option>
-                    <option value='18:00'>18:00</option>
-                    <option value='19:00'>19:00</option>
-                    <option value='20:00'>20:00</option>
-                    <option value="21:00">21:00</option>
-                    <option value='22:00'>22:00</option>
+                <select id="res-time" required >
+                    {time}
                 </select>
             </div>
             <div className='number__guests'>
@@ -75,9 +70,9 @@ const BookingForm = () => {
                       min="1"
                       max="10"
                       id="guests"
-                      value={guest.value}
+                      value={guest.number}
                       onChange={(e) => {
-                          setGuest({...guest, value: e.target.value})
+                          setGuest(e.target.value)
                       }}
                   />
                   {guest.value > 10 ? (
@@ -95,7 +90,7 @@ const BookingForm = () => {
                     <option value="Anniversary">Anniversary</option>
                 </select>
             </div>
-            <input type="submit" className='submit__btn' value="Make Your reservation" disabled={!getIsFormValid()} />
+            <button type='submit' className='submit__btn' onClick={formSubmission}>Make Your Reservation</button>
         </form>
     </>
   )

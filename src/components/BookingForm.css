@@ -10,6 +10,7 @@ form,
 
 form{
     margin-bottom: 4rem;
+    padding: 0 1rem;
 }
 
 .booking__title h1{
@@ -51,9 +52,14 @@ select{
 }
 
 .submit__btn{
+    width: 100%;
     background-color: var(--primary-color-1);
+    color: var(--primary-color-2);
     font-weight: 700;
     font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    outline: none;
     cursor: pointer;
     margin-top: 1.5rem;
     transition: 0.3s all;
