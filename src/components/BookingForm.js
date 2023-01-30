@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 const GuestErrorMessage = () => {
     return (
-        <p className='field__error'>Number of Guest should not be more than 10</p>
+        <p className='field__error'>Number of Guest can not be more than 10</p>
     )
 }
 
@@ -12,7 +12,7 @@ const BookingForm = ({ availableTimes, setAvailableTimes, submitForm }) => {
 
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
-    const [guests, setGuests] = useState("");
+    const [guests, setGuests] = useState("1");
     const [occasion, setOccasion] = useState("");
 
     function isValidDate(dateString) {
@@ -81,10 +81,10 @@ const BookingForm = ({ availableTimes, setAvailableTimes, submitForm }) => {
                       max="10"
                       id="guests"
                       value={guests}
-                      onChange={(e) => setGuests(e.target.value)}
+                      onChange={(e)=>setGuests(e.target.value)}
                       required
                   />
-                  {guests.number > 10 ? (
+                  {guests.valueOf() > 10 ? (
                       <GuestErrorMessage />
                   ) : null}
             </div>
