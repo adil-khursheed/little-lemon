@@ -5,16 +5,33 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 1rem;
     background-color: var(--primary-color-2);
     text-align: center;
+    padding: 1rem;
 }
 
 .confirmation__title{
     color: var(--primary-color-1);
     font-size: 3rem;
+    line-height: 0.8;
 }
 
 .confirmation__desc{
+    max-width: 500px;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.confirmation__page__btn{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.confirmation__page__btn button{
+    width: 150px;
+    height: 30px;
+    font-size: 0.7rem;
 }

@@ -8,19 +8,22 @@ import './Specials.css';
 
 
 const specialMenus = [
-    {
+  {
+      id: 1,
       image: GreekSalad,
       title: 'Greek Salad',
       price: '$12.99',
       desc: 'The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.'
     },
-    {
+  {
+      id: 2,
       image: Bruchetta,
       title: 'Bruchetta',
       price: '$5.99',
       desc: 'Our Bruchetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.'
     },
-    {
+  {
+      id: 3,
       image: LemonDessert,
       title: 'Lemon Dessert',
       price: '$5.00',
@@ -41,7 +44,7 @@ const Specials = () => {
           <div className='specials__menu'>
             {specialMenus.map((specialMenu) => {
               return (
-                <div className='specials__dish'>
+                <div className='specials__dish' key={specialMenu.id}>
                   <div className='dish__image'>
                     <img src={specialMenu.image} />
                   </div>
