@@ -62,12 +62,21 @@ button{
 @media screen and (max-width: 740px) {
     .hero-section{
         flex-direction: column-reverse;
+        padding: 0;
     }
 
     .hero-text,
     .hero-image img{
         max-width: 740px;
         width: 100%;
+    }
+
+    .hero-text{
+        padding: 1rem;
+    }
+
+    .hero-image img{
+        border-radius: 0;
     }
 }
 

@@ -17,7 +17,7 @@ header{
 }
  
 .header img{
-     width: 200px;
+     width: 160px;
 }
  
 .navbar{
@@ -55,12 +55,16 @@ header{
         align-items: center;
         padding-top: 5rem;
         font-size: 24px;
-        transition: 0.3s all;
+        transition: 0.5s all;
         z-index: 999;
+        opacity: 0;
+        visibility: hidden;
     }
 
     .navbar.active{
         right: 0px;
+        opacity: 1;
+        visibility: visible;
     }
 }
  
